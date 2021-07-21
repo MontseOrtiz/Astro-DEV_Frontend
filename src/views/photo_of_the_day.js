@@ -10,7 +10,7 @@ context.photoOfDay.length === 0?
 <h1>cargando</h1>
 : 
 <div>
-<h1>{context.photoOfDay.explanation}</h1>
+<h1>{context.photoOfDay.daily_photo}</h1>
 </div>
 }
 </div>

@@ -1,16 +1,18 @@
 import axios from 'axios';
 
-const baseURL = process.env.API_BASE_URL
+const baseURL = 'http://localhost:3000'
 const service = axios.create({
+  withCredentials: true,
   baseURL
 })
 
 const MY_SERVICE = {
     getPhotoOfDay: () => {
-        return service.get(`photo/`);
+      console.log(baseURL)
+        return service.get(`/photo`);
       },
    getPhotoByDay: (date) => {
-     return service.get(`photo/${date}`);
+     return service.get(`/photo/${date}`);
    }
 }
 

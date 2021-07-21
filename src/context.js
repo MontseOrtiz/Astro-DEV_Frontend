@@ -1,5 +1,5 @@
 import React, { Component, createContext } from 'react'
-import MY_SERVICE from './services/index'
+import MY_SERVICE from './services/apod_services'
 export const MyContext = createContext()
 
 class MyProvider extends Component {
@@ -7,15 +7,15 @@ class MyProvider extends Component {
     photoOfDay:{},
     photo:{}
       }
-      componentWillMount(){
+     componentWillMount(){
         this.getPhotoOfDay();
           }
 
     getPhotoOfDay=()=>{ 
     MY_SERVICE.getPhotoOfDay()
     .then(( {data} ) => {
-        console.log(data)
       this.setState({photoOfDay:data});
+      console.log(this.state.photoOfDay)
      })
      .catch(err => console.log(err));
   }

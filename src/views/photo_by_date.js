@@ -3,6 +3,7 @@ import Search from '../components/Search';
 import MY_SERVICE from '../services/apod_services'
 
 
+
 export default class PhotoByDay extends React.Component {
   constructor(props){
     super(props);
@@ -30,8 +31,7 @@ export default class PhotoByDay extends React.Component {
       <img src={this.state.photo.hdurl} alt={this.state.photo.date}></img>
       <h1>{this.state.photo.date}</h1>
       <p>{this.state.photo.explanation}</p>
-
       </div>
-      </div>);
+      </div>)
   }
 }

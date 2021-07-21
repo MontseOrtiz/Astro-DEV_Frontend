@@ -23,17 +23,10 @@ class MyProvider extends Component {
      .catch(err => console.log(err));
   }
   
- // getPhotoByDay=()=>{ 
-   // MY_SERVICE.getPhotoByDay()
-    //.then(( {data} ) => {
-     // this.setState({photo:data});
-     //})
-     //.catch(err => console.log(err));
-  //}
   getDateToday=()=>{
     let today = new Date();
     let dd = today.getDate();
-    let mm = today.getMonth()+1; //January is 0!
+    let mm = today.getMonth()+1;
     let yyyy = today.getFullYear();
  if(dd<10){
         dd='0'+dd
@@ -41,18 +34,16 @@ class MyProvider extends Component {
     if(mm<10){
         mm='0'+mm
     } 
-today = yyyy+'-'+mm+'-'+dd;
-this.setState({today:today});
-
-//let dateInput = document.getElementById("datefield")
-//dateInput.setAttribute("max", today)
+  today = yyyy+'-'+mm+'-'+dd;
+  this.setState({today:today});
   }
 
     render() {
         return (
             <MyContext.Provider
               value={{
-                photoOfDay: this.state.photoOfDay
+                photoOfDay: this.state.photoOfDay,
+                today: this.state.today
               }}
             >
               {this.props.children}

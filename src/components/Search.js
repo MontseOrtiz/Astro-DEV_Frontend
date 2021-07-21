@@ -1,5 +1,5 @@
 import { Component } from 'react';
-
+import { MyContext } from '../context'
 export default class Search extends Component {
     constructor(props) {
         super(props);
@@ -9,11 +9,14 @@ export default class Search extends Component {
     }
     render() {
         return (
+            <MyContext.Consumer>
+            {context =>(  
         <div className="search-container">
             <input
                 id="datefield"
                 type="date"
                 min="1995-06-16"
+                max={context.today}
                 placeholder="Buscar por fecha"
                 className="search-input"
                 value={this.state.searchDate}
@@ -30,6 +33,9 @@ export default class Search extends Component {
                 Buscar
             </button>
         </div>
+
+        )}
+        </MyContext.Consumer>     
         );
     }
 }

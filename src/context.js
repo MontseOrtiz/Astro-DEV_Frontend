@@ -5,7 +5,7 @@ export const MyContext = createContext()
 class MyProvider extends Component {
   state={
     photoOfDay:{},
-    photo:{}
+    photoByDay:{}
       }
      componentWillMount(){
         this.getPhotoOfDay();
@@ -14,26 +14,25 @@ class MyProvider extends Component {
     getPhotoOfDay=()=>{ 
     MY_SERVICE.getPhotoOfDay()
     .then(( {data} ) => {
-      this.setState({photoOfDay:data});
-      console.log(this.state.photoOfDay)
+      console.log(data.daily_photo)
+      this.setState({photoOfDay:data.daily_photo});
      })
      .catch(err => console.log(err));
   }
   
-  getPhotoByDay=()=>{ 
-    MY_SERVICE.getPhotoByDay()
-    .then(( {data} ) => {
-      this.setState({photo:data});
-     })
-     .catch(err => console.log(err));
-  }
+ // getPhotoByDay=()=>{ 
+   // MY_SERVICE.getPhotoByDay()
+    //.then(( {data} ) => {
+     // this.setState({photo:data});
+     //})
+     //.catch(err => console.log(err));
+  //}
 
     render() {
         return (
             <MyContext.Provider
               value={{
-                getPhotoOfDay: this.state.getPhotoOfDay,
-                getPhotoByDay: this.state.getPhotoByDay
+                photoOfDay: this.state.photoOfDay
               }}
             >
               {this.props.children}

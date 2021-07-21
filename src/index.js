@@ -4,11 +4,11 @@ import './index.css';
 //import App from './App';
 import reportWebVitals from './reportWebVitals';
 import MyProvider from './context';
-import Router from "./router";
+import Routes from "./routes";
 
 ReactDOM.render(
   <MyProvider>
-    <Router />
+    <Routes />
   </MyProvider>,
   document.getElementById('root')
 );

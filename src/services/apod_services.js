@@ -12,7 +12,7 @@ const MY_SERVICE = {
         return service.get(`/photo`);
       },
    getPhotoByDay: (date) => {
-     return service.get(`/photo/${date}`);
+     return service.get(`/${date}`);
    }
 }
 

@@ -1,6 +1,6 @@
 import { Component } from 'react';
 
-class Search extends Component {
+export default class Search extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -11,12 +11,13 @@ class Search extends Component {
         return (
         <div className="search-container">
             <input
-                type="text"
+                id="datefield"
+                type="date"
+                min="1995-06-16"
                 placeholder="Buscar por fecha"
                 className="search-input"
                 value={this.state.searchDate}
                 onChange={(evento) => {
-                    console.log(evento.target.value)
                     this.setState({searchDate: evento.target.value});
                 }}
             />
@@ -33,4 +34,3 @@ class Search extends Component {
     }
 }
 
-export default Search;

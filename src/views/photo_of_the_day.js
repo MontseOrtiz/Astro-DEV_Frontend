@@ -4,10 +4,10 @@ function photoOfTheDay() {
   return (
     <MyContext.Consumer>
 {context =>(  
-  <div class="home">
+  <div>
     {
 context.photoOfDay.length === 0?
-<h1>cargando</h1>
+<h1>{context.photoOfDay.hdurl}</h1>
 : 
 <div>
 <img src={context.photoOfDay.hdurl} alt={context.photoOfDay.date}></img>

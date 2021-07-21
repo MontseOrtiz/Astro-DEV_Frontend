@@ -7,7 +7,7 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Routes/>
+        <Routes />
       </Switch>
     </Router>
   );

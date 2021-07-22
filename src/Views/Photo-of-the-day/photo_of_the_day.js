@@ -1,10 +1,11 @@
 import { MyContext } from '../../Context/context-Apod'
-
+import NavbarAll from "../../Components/NavBar/NavBar"
 function photoOfTheDay() {
   return (
     <MyContext.Consumer>
 {context =>(  
 <div>
+<NavbarAll/>
 {
   context.message!=="error" && context.photoOfDay.media_type === "video" ?
   <div>

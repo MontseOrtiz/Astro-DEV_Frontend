@@ -6,8 +6,6 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem,
-  NavLink,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
@@ -26,9 +24,20 @@ const NavbarAll = (props) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
-            <NavItem>
-              <NavLink href="/rover-info">RoverInfo</NavLink>
-            </NavItem>
+            <UncontrolledDropdown color="dark" nav inNavbar>
+              <DropdownToggle color="dark" nav caret>
+                Rovers en Marte
+              </DropdownToggle>
+              <DropdownMenu right>
+                <DropdownItem className="noWhite" href="/rover-info">
+                  Rovers
+                </DropdownItem>
+                <DropdownItem divider />              
+                <DropdownItem className="noWhite" href="/rover-photo">
+                  Rovers en Marte
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
             <UncontrolledDropdown color="dark" nav inNavbar>
               <DropdownToggle color="dark" nav caret>
                 Foto del dia

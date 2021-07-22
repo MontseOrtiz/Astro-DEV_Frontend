@@ -2,6 +2,7 @@ import React from "react";
 import { useContext } from 'react';
 import { RoverContext } from '../../Context/RoverContext'
 import CardRover from "../../Components/CardRover"
+import NavbarAll from "../../Components/NavBar/NavBar"
 
 
 function RoverPhotos() {
@@ -10,6 +11,7 @@ function RoverPhotos() {
 
     return (
         <div style={{ height:'100vh'}} >
+            <NavbarAll/>
             <h2 className="text-center py-4 text-white">Rovers en Marte</h2>
             <p className="text-center mb-5 text-white">Da clic en algun Rover para ver todas sus fotos</p>
             <div className="container mt-1">

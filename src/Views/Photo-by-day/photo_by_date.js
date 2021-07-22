@@ -1,6 +1,8 @@
 import React from 'react';
 import Search from '../../Components/Search-photo/Search';
 import MY_SERVICE from '../../services/apod_services'
+import NavbarAll from "../../Components/NavBar/NavBar"
+
 
 export default class PhotoByDay extends React.Component {
   constructor(props){
@@ -26,18 +28,19 @@ export default class PhotoByDay extends React.Component {
   render() {
     return (
  <div>
+   <NavbarAll/>
 {
   this.state.message!=="error" && this.state.photo.media_type === "video" ?
   <div >
     <div>
     <div>
-    <div className="container">
-    <div className="row">
-    <div className="row detail-photo-div my-3 ">
-    <div className="col-12 col-md-6 text-white">
-    <div className="py-5">
-    <h2 className="text-center">
-    Sorry, this is not a image click to see video: 
+    <div className="container " style={{ height:'100vh'}}>
+<div className="row d-flex align-items-center" style={{ height:'100%'}}>
+<div className="row detail-photo-div " >
+<div className="col-12  text-white">
+<div className="py-5 text-center">
+<h2 className="text-center mb-4">
+    Lo siento este es un video da click en el boton para verlo: 
     </h2>             
     <a href={this.state.photo.url}><button>VIDEO</button></a>
     <p>
@@ -56,13 +59,13 @@ export default class PhotoByDay extends React.Component {
     this.state.message==="error"?
     <div>
     <div>
-    <div className="container">
-    <div className="row">
-    <div className="row detail-photo-div my-3 ">
-    <div className="col-12 col-md-6 text-white">
-    <div className="py-5">
-    <h2 className="text-center">
-    Sorry select other date: 
+    <div className="container " style={{ height:'100vh'}}>
+<div className="row d-flex align-items-center" style={{ height:'100%'}}>
+<div className="row detail-photo-div " >
+<div className="col-12  text-white">
+<div className="py-5 text-center">
+<h2 className="text-center mb-4">
+    Lo sentimos elije otra fecha: 
     </h2>             
     <Search emitSearch={this.sendSearch} />
             </div>

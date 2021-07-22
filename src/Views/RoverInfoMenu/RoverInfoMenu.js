@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { RoverContext } from '../../Context/RoverContext'
 import CardRover from "../../Components/CardRover"
 import './RoverInfoMenu.css'
+import NavbarAll from "../../Components/NavBar/NavBar"
 
 
 function RoverInfoMenu() {
@@ -11,6 +12,7 @@ function RoverInfoMenu() {
 
     return (
         <div style={{ height:'100vh'}}>
+               <NavbarAll/>
             <h2 className="text-center py-4 text-white">Rovers en Marte</h2>
             <p className="text-center mb-5 text-white">Da clic en algun Rover para obtener su información</p>
             <div className="container mt-5">

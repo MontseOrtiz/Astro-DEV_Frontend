@@ -55,7 +55,6 @@ const RoverProvider = ({ children }) => {
     setDataObtained([])
     await Rover_service.getAllPhotos(roverName)
     .then(  res => {
-      console.log("soy el res",res.data.rover_photos.photos)
        setDataObtained(res.data.rover_photos.photos)
       return dataObtained
   })
@@ -66,7 +65,6 @@ const RoverProvider = ({ children }) => {
     setDataObtained({})
     Rover_service.getRoverInfo(roverName)
     .then( res => {
-      console.log("soy el res",res.data.rover_info)
       setDataObtained(res.data.rover_info)
       return res.data.rover_info
   })

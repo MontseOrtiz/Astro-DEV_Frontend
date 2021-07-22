@@ -2,42 +2,44 @@ import React from "react";
 import { useContext } from 'react';
 import { RoverContext } from '../../Context/RoverContext'
 import { useParams } from "react-router-dom";
-import { Spinner } from 'reactstrap';
+import { Spinner, Button } from 'reactstrap';
+import { Link } from "react-router-dom";
 
 function RoverInfo() {
     const { roverName} = useParams();
     const [{ dataObtained }] = useContext(RoverContext);
-    console.log("la data", dataObtained)
-    if (Object.keys(dataObtained).length === 0) {
-        console.log("es cero")
-    } else {
-        console.log("ya entro")
-    }
-   
+
     return (
         <div >
-            <h2 className="text-center">Rovers en Marte</h2>
-            <p>Soy la lista info !!!</p>
-            <p>{roverName}</p>
+            
             {
                 Object.keys(dataObtained).length === 0 ? 
-                <div>
-                    <Spinner type="grow" color="primary" />
-                    <Spinner color="primary" />
+                <div  style={{ height: '100vh' }}>
+
+                    <h2 className="text-center text-white">Rover {roverName}</h2>
+                    <div className="d-flex justify-content-center align-items-center" style={{ height: '100%' }} >
+                            <Spinner type="grow" color="primary" />
+
+                        </div>
 
                 </div> : 
-                <div className="row m-5" style={{ height: '80vh' }}>
-                    <p>ya cargamos</p>
-                    <p>{dataObtained.photo_manifest.name}</p>
+                <div style={{ height: '100vh' }} className="d-flex flex-column justify-content-center align-items-center">
+                    <h2 className="text-center text-white">Rover {roverName}</h2>
+                <div className="mx-5 mt-5 pb-5 text-white text-center" style={{ height: '80vh' }}>
+                    <h4>Fecha de lanzamiento</h4>
                     <p>{dataObtained.photo_manifest.landing_date}</p>
+                    <h4>Fecha de sterrizaje</h4>
+                    <p>{dataObtained.photo_manifest.launch_date}</p>
+                    <h4>Status</h4>
+                    <p>{dataObtained.photo_manifest.status}</p>
+                    <h4>Total de fotos tomadas</h4>
+                    <p>{dataObtained.photo_manifest.total_photos}</p>
+                    <Link to={`/rover-info`} >
+                    <Button color="secondary">Regresar</Button>
+                    </Link>
+                    </div>
                 </div>
             }
-            {/* <p>{dataObtained}</p> */}
-            {/* <div  className="row m-5" style={{height:'80vh' }}>
-                {rovers.map((rover, index, path) => {
-                    return <CardRover rover={rover} key={index} path="photo"/>
-                })}
-            </div> */}
         </div>
     );
 }

@@ -42,6 +42,13 @@ const RoverProvider = ({ children }) => {
     }
   ]
 
+  const roverPhotos = {
+    Perseverance: roverPersevernce,
+    Curiosity: roverCuriosity,
+    Opportunity: roverOportunity,
+    Spirit: roverSpirit
+  }
+
   const [dataObtained, setDataObtained] = useState([])
 
   const getAllPhotos =   async (roverName)=>{
@@ -74,7 +81,7 @@ const RoverProvider = ({ children }) => {
 
 
   const state = [
-    {roversPhotos, roversInfo, dataObtained},
+    {roversPhotos, roversInfo, dataObtained, roverPhotos},
     { getAllPhotos, getRoverInfo, getFilterPhotos }
   ];
 

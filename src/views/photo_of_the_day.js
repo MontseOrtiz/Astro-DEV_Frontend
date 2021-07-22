@@ -4,18 +4,87 @@ function photoOfTheDay() {
   return (
     <MyContext.Consumer>
 {context =>(  
-  <div>
-    {
-context.photoOfDay.length === 0?
-<h1>{context.photoOfDay.hdurl}</h1>
-: 
 <div>
-<img src={context.photoOfDay.hdurl} alt={context.photoOfDay.date}></img>
-<h1>{context.photoOfDay.date}</h1>
-<p>{context.photoOfDay.explanation}</p>
+{
+  context.message!=="error" && context.photoOfDay.media_type === "video" ?
+  <div>
+    <div>
+    <div>
+    <div className="container">
+    <div className="row">
+    <div className="row detail-photo-div my-3 ">
+    <div className="col-12 col-md-6 text-white">
+    <div className="py-5">
+    <h2 className="text-center">
+    Sorry, this is not a image click to see video: 
+    </h2>             
+    <a href={context.photoOfDay.url}><button>VIDEO</button></a>
+    <p>
+    <b>Select other date:</b>
+    </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+    </div>
 </div>
-}
+:
+    context.message==="error"?
+    <div>
+    <div>
+    <div className="container">
+    <div className="row">
+    <div className="row detail-photo-div my-3 ">
+    <div className="col-12 col-md-6 text-white">
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+    </div>
+:
+context.message ==="empty" ?
+<div>
+<div>
+<div className="container">
+<div className="row">
+<div className="row detail-photo-div my-3 ">
+<div className="col-12 col-md-6 text-white">
+      </div>
+    </div>
+  </div>
 </div>
+  </div>
+</div>
+:
+    <div>
+    <div className="container">
+    <div className="row">
+    <div className="row detail-photo-div my-3 ">
+    <div className="col-12 col-md-4">
+    <img src={context.photoOfDay.hdurl} className="img-photo-detail py-auto" alt={context.photoOfDay.date} />
+    </div>
+    <div className="col-12 col-md-6 text-white">
+    <h2 className="text-center">
+    {context.photoOfDay.title} 
+    </h2>
+    <div className="py-3">
+    <p>
+    <b>Fecha:</b>{context.photoOfDay.date}
+    </p>
+    <p>
+    <b>Descripción:</b>{context.photoOfDay.explanation}
+    </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+    }
+    </div>
     )}
     </MyContext.Consumer>
   );

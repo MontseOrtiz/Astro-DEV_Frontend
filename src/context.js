@@ -5,7 +5,7 @@ export const MyContext = createContext()
 class MyProvider extends Component {
   state={
     photoOfDay:{},
-    photoByDay:{},
+    message:"empty",
     today:{}
       }
      componentWillMount(){
@@ -18,6 +18,7 @@ class MyProvider extends Component {
     getPhotoOfDay=()=>{ 
     MY_SERVICE.getPhotoOfDay()
     .then(( {data} ) => {
+      this.setState({ message: data.message });
       this.setState({photoOfDay:data.daily_photo});
      })
      .catch(err => console.log(err));
@@ -43,6 +44,7 @@ class MyProvider extends Component {
             <MyContext.Provider
               value={{
                 photoOfDay: this.state.photoOfDay,
+                message:this.state.message,
                 today: this.state.today
               }}
             >

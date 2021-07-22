@@ -1,4 +1,4 @@
-import { createContext} from 'react';
+import { createContext, useState} from 'react';
 import roverPersevernce from "../assets/rover_perseverance.jpeg"
 import roverCuriosity from "../assets/rover-curiosity.jpeg"
 import roverOportunity from "../assets/rover_opportunity.jpeg"
@@ -10,10 +10,6 @@ const RoverContext = createContext();
 const RoverProvider = ({ children }) => {
 
   const roversPhotos = [
-    {
-        roverName: 'Perseverance',
-        roverPhoto: roverPersevernce
-    },
     {
         roverName: 'Curiosity',
         roverPhoto: roverCuriosity
@@ -29,6 +25,10 @@ const RoverProvider = ({ children }) => {
   ]
   const roversInfo = [
     {
+      roverName: 'Perseverance',
+      roverPhoto: roverPersevernce
+  },
+    {
         roverName: 'Curiosity',
         roverPhoto: roverCuriosity
     },
@@ -42,17 +42,26 @@ const RoverProvider = ({ children }) => {
     }
   ]
 
-  const getAllPhotos = (roverName)=>{
-    Rover_service.getAllPhotos(roverName)
-    .then( res => console.log("soy el res",res.data))
+  const [dataObtained, setDataObtained] = useState([])
+
+  const getAllPhotos =   async (roverName)=>{
+    setDataObtained([])
+    await Rover_service.getAllPhotos(roverName)
+    .then(  res => {
+      console.log("soy el res",res.data.rover_photos.photos)
+       setDataObtained(res.data.rover_photos.photos)
+      return dataObtained
+  })
      .catch(err => console.log(err));
   }
 
-  const getRoverInfo = (roverName)=>{
+  const getRoverInfo =  (roverName)=>{
+    setDataObtained({})
     Rover_service.getRoverInfo(roverName)
     .then( res => {
-      console.log("soy el res",res.data)
-      return res.data
+      console.log("soy el res",res.data.rover_info)
+      setDataObtained(res.data.rover_info)
+      return res.data.rover_info
   })
      .catch(err => console.log(err));
   }
@@ -65,10 +74,11 @@ const RoverProvider = ({ children }) => {
 
 
   const state = [
-    {roversPhotos, roversInfo},
+    {roversPhotos, roversInfo, dataObtained},
     { getAllPhotos, getRoverInfo, getFilterPhotos }
   ];
 
+ 
   return (
     <RoverContext.Provider value={state}>
       {children}

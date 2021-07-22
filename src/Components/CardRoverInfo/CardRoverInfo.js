@@ -1,10 +1,10 @@
 import React from "react";
-import "./CardRover.css"
+import "./CardRoverInfo.css"
 import { Link } from "react-router-dom";
 
-function CardRover({ rover, path , action }) {
+function CardRoverInfo({ rover, path , action }) {
     return (
-        <div className="cardRover-container col-12 col-sm-5 px-5">
+        <div className="cardRover-container col-12 col-sm-6 col-md-3">
             <Link to={`/rover-${path}/${rover.roverName}`} onClick={action}>
             <img
                 src={rover.roverPhoto}
@@ -12,9 +12,9 @@ function CardRover({ rover, path , action }) {
                 className="img-fluid"
               />
             </Link>
-            <h3 className="mt-4 text-center text-white">{rover.roverName}</h3>
+            <h2 className="mt-2 text-center">{rover.roverName}</h2>
         </div>
     );
 }
 
-export default CardRover;
+export default CardRoverInfo;

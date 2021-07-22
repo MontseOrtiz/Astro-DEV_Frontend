@@ -76,13 +76,13 @@ export default class PhotoByDay extends React.Component {
 this.state.message ==="empty" ?
 <div>
 <div>
-<div className="container">
-<div className="row">
-<div className="row detail-photo-div my-3 ">
-<div className="col-12 col-md-6 text-white">
-<div className="py-5">
-<h2 className="text-center">
-Select a date: 
+<div className="container " style={{ height:'100vh'}}>
+<div className="row d-flex align-items-center" style={{ height:'100%'}}>
+<div className="row detail-photo-div " >
+<div className="col-12  text-white">
+<div className="py-5 text-center">
+<h2 className="text-center mb-4">
+Selecciona una fecha: 
 </h2>             
 <Search emitSearch={this.sendSearch} />
         </div>
@@ -94,8 +94,8 @@ Select a date:
 </div>
 :
     <div>
-    <div className="container">
-    <div className="row">
+    <div className="container" style={{ height:'100vh'}}>
+    <div className="row d-flex align-items-center" style={{ height:'100%'}}>
     <div className="row detail-photo-div my-3 ">
     <div className="col-12 col-md-4">
     <img src={this.state.photo.hdurl} className="img-photo-detail py-auto" alt={this.state.photo.date} />
@@ -112,7 +112,7 @@ Select a date:
     <b>Descripción:</b>{this.state.photo.explanation}
     </p>
     <p>
-    <b>Select other date:</b>
+    <b>Selecciona una fecha:</b>
     </p>
     <Search emitSearch={this.sendSearch} />
             </div>

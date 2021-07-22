@@ -4,7 +4,7 @@ import { RoverContext } from '../../Context/RoverContext'
 import { useParams } from "react-router-dom";
 import CardPhoto from "../../Components/CardPhoto";
 import { Spinner } from 'reactstrap';
-
+import NavbarAll from "../../Components/NavBar/NavBar"
 
 function RoverPhotosList() {
     const { roverName } = useParams();
@@ -12,6 +12,7 @@ function RoverPhotosList() {
 
     return (
         <div>
+            <NavbarAll/>
             {
                 Object.keys(dataObtained).length === 0 ?
                     <div className="container" style={{ height: '100vh' }}>

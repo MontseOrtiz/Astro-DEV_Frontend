@@ -11,7 +11,6 @@ function RoverInfo() {
 
     return (
         <div >
-            
             {
                 Object.keys(dataObtained).length === 0 ? 
                 <div  style={{ height: '100vh' }}>

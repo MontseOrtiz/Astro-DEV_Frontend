@@ -1,0 +1,279 @@
+.wrapper{
+    width:100%;
+    height:100vh;
+    margin-left: auto ;
+    margin-right: auto ;
+    overflow:hidden;
+    position:relative;
+    z-index:2;
+  }
+  
+  .btn-home{
+      z-index: 3;
+  }
+
+  .scene {
+    padding: 0;
+    margin: 0;
+  }
+  /*================================================================
+  Animation - Move Up and Move Down Letters
+  ================================================================*/
+  /*================================================================
+  Move Up
+  ================================================================*/
+  @keyframes moveUp {
+      0% {
+          transform: translate3d(0px, 0px, 0px);
+          animation-timing-function: ease-in;
+      }
+       
+      50% {
+          transform: translate3d(0px, 10px, 0px);
+          animation-timing-function: ease-out;
+      }
+       
+      100% {
+          transform: translate3d(0px, 0px, 0px);
+          animation-timing-function: ease-in;
+      }
+  }
+  @-webkit-keyframes moveUp {
+      0% {
+          transform: translate3d(0px, 0px, 0px);
+          animation-timing-function: ease-in;
+      }
+       
+      50% {
+          transform: translate3d(0px, 10px, 0px);
+          animation-timing-function: ease-out;
+      }
+       
+      100% {
+          transform: translate3d(0px, 0px, 0px);
+          animation-timing-function: ease-in;
+      }
+  }
+  @-moz-keyframes moveUp {
+      0% {
+          transform: translate3d(0px, 0px, 0px);
+          animation-timing-function: ease-in;
+      }
+       
+      50% {
+          transform: translate3d(0px, 10px, 0px);
+          animation-timing-function: ease-out;
+      }
+       
+      100% {
+          transform: translate3d(0px, 0px, 0px);
+          animation-timing-function: ease-in;
+      }
+  }
+  @-ms-keyframes moveUp {
+      0% {
+          transform: translate3d(0px, 0px, 0px);
+          animation-timing-function: ease-in;
+      }
+       
+      50% {
+          transform: translate3d(0px, 10px, 0px);
+          animation-timing-function: ease-out;
+      }
+       
+      100% {
+          transform: translate3d(0px, 0px, 0px);
+          animation-timing-function: ease-in;
+      }
+  }
+  
+  .moveUp{
+      animation: moveUp 2s infinite;
+  }
+  /*================================================================
+  Move Down
+  ================================================================*/
+  @keyframes moveDown {
+      0% {
+          transform: translate3d(0px, 0px, 0px);
+          animation-timing-function: ease-in;
+      }
+       
+      50% {
+          transform: translate3d(0px, -10px, 0px);
+          animation-timing-function: ease-out;
+      }
+       
+      100% {
+          transform: translate3d(0px, 0px, 0px);
+          animation-timing-function: ease-in;
+      }
+  } 
+  @-webkit-keyframes moveDown {
+      0% {
+          transform: translate3d(0px, 0px, 0px);
+          animation-timing-function: ease-in;
+      }
+       
+      50% {
+          transform: translate3d(0px, -10px, 0px);
+          animation-timing-function: ease-out;
+      }
+       
+      100% {
+          transform: translate3d(0px, 0px, 0px);
+          animation-timing-function: ease-in;
+      }
+  } 
+  @-moz-keyframes moveDown {
+      0% {
+          transform: translate3d(0px, 0px, 0px);
+          animation-timing-function: ease-in;
+      }
+       
+      50% {
+          transform: translate3d(0px, -10px, 0px);
+          animation-timing-function: ease-out;
+      }
+       
+      100% {
+          transform: translate3d(0px, 0px, 0px);
+          animation-timing-function: ease-in;
+      }
+  } 
+  @-ms-keyframes moveDown {
+      0% {
+          transform: translate3d(0px, 0px, 0px);
+          animation-timing-function: ease-in;
+      }
+       
+      50% {
+          transform: translate3d(0px, -10px, 0px);
+          animation-timing-function: ease-out;
+      }
+       
+      100% {
+          transform: translate3d(0px, 0px, 0px);
+          animation-timing-function: ease-in;
+      }
+  } 
+  
+  .moveDown{
+      animation: moveDown 2s infinite;
+  }
+  /*================================================================
+  PARALLAX
+  ================================================================*/
+  ul#scene {
+      list-style-type:none;
+  }
+  
+  .layer {
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+  }
+  
+  li.layer a {
+      color:white;
+      text-decoration:none;
+      text-shadow: 3px 3px 3px #ccc; 
+      display: block; 
+  }
+  li.layer:nth-child(1) {} /*1 item*/
+  
+  /*-----Logotype----------------*/
+  li.layer:nth-child(2) a{
+      font-size:2.5vw; 
+      color:white;
+      text-shadow: 2px 2px 2px #ccc;
+      padding:10px 20px;
+      border:1px solid white;
+      border-radius:5px;
+      box-shadow:2px 2px 2px #ccc;
+      position: absolute;
+      top:40vh;
+      left:45vw;
+      -webkit-transition: all .5s ease;
+      -moz-transition: all .5s ease;
+      -o-transition: all .5s ease;
+      -ms-transition: all .5s ease;
+      transition: all .5s ease;
+  }
+  
+  li.layer:nth-child(2) a:hover{
+    color:black;
+    background: #ffffff69;
+    border: none;
+    /* font-size:3.5vw;  */
+  }
+
+  /*-----A----------------------*/
+  li.layer:nth-child(3) a{
+      font-size:5vw;
+      position:absolute;
+      top:15vh;
+      left:15vw;
+  }
+  
+  /*-----S---------------------*/
+  li.layer:nth-child(4) a{
+      font-size:8vw;
+      position:absolute;
+      top:40vh;
+      left:22vw;
+  }
+  
+  /*-----T---------------------*/
+  li.layer:nth-child(5) a{
+      font-size:6vw;
+      position:absolute;
+      top:70vh;
+      left:35vw;
+  }
+  
+  /*-----R---------------------*/
+  li.layer:nth-child(6) a{
+      font-size:4vw;
+      position:absolute;
+      top:60vh;
+      left:55vw;
+  }
+  
+  /*-----O---------------------*/
+  li.layer:nth-child(7) a{
+      font-size:3.5vw;
+      position:absolute;
+      top:18vh;
+      left:40vw;
+  }
+  
+  /*-----D---------------------*/
+  li.layer:nth-child(8) a{
+      font-size:3.5vw;
+      position:absolute;
+      top:18vh;
+      left:60vw;
+  }
+  
+  /*-----E---------------------*/
+  li.layer:nth-child(9) a{
+    font-size:6vw;
+    position:absolute;
+    top:40vh;
+    right:30vw;
+  }
+  
+  /*-----V---------------------*/
+  li.layer:nth-child(10) a{
+    font-size:5vw;
+    position:absolute;
+    top:15vh;
+    right:20vw;
+     
+  }
+
+  

@@ -10,7 +10,7 @@ function photoOfTheDay() {
   <div>
     <div>
     <div>
-    <div className="container">
+    <div className="container" style={{ height:'100vh'}}>
     <div className="row">
     <div className="row detail-photo-div my-3 ">
     <div className="col-12 col-md-6 text-white">
@@ -34,7 +34,7 @@ function photoOfTheDay() {
     context.message==="error"?
     <div>
     <div>
-    <div className="container">
+    <div className="container" style={{ height:'100vh'}}>
     <div className="row">
     <div className="row detail-photo-div my-3 ">
     <div className="col-12 col-md-6 text-white">
@@ -60,9 +60,10 @@ context.message ==="empty" ?
 </div>
 :
     <div>
-    <div className="container">
-    <div className="row">
-    <div className="row detail-photo-div my-3 ">
+    <div className="container" style={{ height:'100%'}}>
+    <div className="row p-5">
+      <h3 className="text-white text-center pt-5">Foto del día</h3>
+    <div className="row detail-photo-div my-4 ">
     <div className="col-12 col-md-4">
     <img src={context.photoOfDay.hdurl} className="img-photo-detail py-auto" alt={context.photoOfDay.date} />
     </div>

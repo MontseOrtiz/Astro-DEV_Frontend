@@ -1,0 +1,28 @@
+.navBar{
+    width: 100vw;
+    height: 8vh;
+    padding: 20px;
+    color: black;
+    background-color: rgba(53, 52, 52, 0.8);
+    -webkit-box-shadow: 10px 10px 11px 0px rgb(15, 2, 119);
+    -moz-box-shadow: 10px 10px 11px 0px rgb(41, 27, 131);
+    box-shadow: 0px 3px 11px 0px rgb(171, 167, 199);
+    padding: 2% 0;
+   }
+
+   .navBar span{
+       color: black;
+   }
+ 
+   .navBar a {
+     padding: 0px 0px 0px 10px;
+     color: rgb(247, 238, 238);
+     text-decoration: none;
+   }
+   .navBar a.navbar-active {
+     color: rgb(15, 15, 15);
+   } 
+
+   .noWhite{
+       color:black
+   }

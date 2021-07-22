@@ -1,5 +1,5 @@
 import React, { Component, createContext } from 'react'
-import MY_SERVICE from './services/apod_services'
+import MY_SERVICE from '../services/apod_services'
 export const MyContext = createContext()
 
 class MyProvider extends Component {

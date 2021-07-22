@@ -1,6 +1,6 @@
 import React from 'react';
-import Search from '../components/Search';
-import MY_SERVICE from '../services/apod_services'
+import Search from '../../Components/Search-photo/Search';
+import MY_SERVICE from '../../services/apod_services'
 
 export default class PhotoByDay extends React.Component {
   constructor(props){
@@ -28,7 +28,7 @@ export default class PhotoByDay extends React.Component {
  <div>
 {
   this.state.message!=="error" && this.state.photo.media_type === "video" ?
-  <div>
+  <div >
     <div>
     <div>
     <div className="container">

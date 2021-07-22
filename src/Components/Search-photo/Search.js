@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { MyContext } from '../context'
+import { MyContext } from '../../Context/context-Apod'
 export default class Search extends Component {
     constructor(props) {
         super(props);

@@ -1,4 +1,4 @@
-import { MyContext } from '../context'
+import { MyContext } from '../../Context/context-Apod'
 
 function photoOfTheDay() {
   return (

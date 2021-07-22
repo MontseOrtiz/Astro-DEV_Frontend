@@ -6,8 +6,6 @@ import {
 
 
 function CardPhoto({ photo }) {
-
-console.log(photo.camera)
     return (
         <div className="cardPhoto-container col-12 col-sm-6 col-md-3 mb-3">
         <Card>
